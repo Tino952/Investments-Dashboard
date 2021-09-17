@@ -25,7 +25,7 @@ Click on the output fields containing different investments to navigate downward
 
 none
 
-[To the app](https://travel-app-952.herokuapp.com/)
+[To the app](https://investment-dashboard-952.herokuapp.com/)
 
 Cheers!
 
