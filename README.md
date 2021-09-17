@@ -10,6 +10,9 @@ Features of this application:
 * Build in Webpack
 * Scss
 * Data coming from JSON starter file
+* Sin waves using canvas
+
+Please note that this is just a beta version of the app and that the "search by id" feature is not functional.
 
 ## Using the App
 
@@ -23,7 +26,7 @@ Click on the output fields containing different investments to navigate downward
 
 ## Dependencies
 
-none
+To code the sin waves in canvas, I used the [following tutorial](https://www.youtube.com/watch?v=VNmTubIDZOY)
 
 [To the app](https://investment-dashboard-952.herokuapp.com/)
 
