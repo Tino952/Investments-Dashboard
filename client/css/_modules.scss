@@ -1,0 +1,313 @@
+@import "global";
+
+/***********************************
+
+Search bar
+
+***********************************/
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 3em 0;
+  font-size: $small-font;
+  // to center input bar by width of go button
+  margin-left: 3em;
+}
+
+.search__input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-gap: 0.5em;
+}
+
+%search__extender {
+  font-size: inherit;
+  height: 2em;
+  border: 0px;
+  border-radius: $round-border;
+  text-align: center;
+}
+
+.search__input-go {
+  @extend %search__extender;
+  width: 3em;
+  background-color: $secondary-color;
+  color: #fff;
+
+  &:active {
+    background-color: $primary-color;
+    transform: $primary-scale;
+  }
+}
+
+.search__input-field {
+  @extend %search__extender;
+  width: 15em;
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    justify-content: flex-end;
+    // undo margin set for small screens
+    margin: 0;
+  }
+}
+
+/***********************************
+
+Financial indicator buttons
+
+***********************************/
+
+#finind {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4em 1em;
+  justify-content: center;
+  grid-gap: 1em;
+}
+
+.finind__button {
+  outline: none;
+  font-family: $primary-font;
+  border: $button-border-reset #fff;
+  border-radius: $round-border;
+  height: 3em;
+  width: 8em;
+}
+
+.finind__button-active {
+  background-color: $primary-color;
+  color: #fff;
+  transform: $primary-scale;
+}
+
+@media screen and (min-width: 600px) {
+  .finind {
+    padding: 6em 5em;
+  }
+}
+
+@media (pointer: fine) {
+
+  .finind__button {
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}
+
+
+/***********************************
+
+Navigation
+
+***********************************/
+
+.nav-link {
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
+}
+
+/***********************************
+
+Main output
+
+***********************************/
+
+// splitting main container into button container (left) and main output (right)
+
+.output {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+}
+
+.output-init {
+  display: grid;
+  grid-template-columns: 0em 1fr;
+}
+
+.output__main-grid {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-row: auto;
+  margin: 4em 0;
+}
+
+// generic flex container
+
+%output-extender {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex container within output__main-grid
+
+#output__main-flex {
+  @extend %output-extender;
+  flex-wrap: wrap;
+  grid-gap: 0.8em;
+}
+
+.output__main-container {
+  @extend %output-extender;
+  border: 2px solid #fff;
+  border-radius: $round-border;
+  flex-direction: column;
+  justify-content: space-between;
+  // setting min dimensions
+  min-width: 240px;
+  flex: 0 1 0;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  &:hover {
+    transform: $secondary-scale;
+    transition: transform 0.3s;
+  }
+}
+
+// remove hover functionality from last output field
+
+.output__main-container__no-hov {
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  #output__main {
+    max-width: 80%;
+  }
+
+  .output__main-container{
+    min-width: 15em;
+  }
+}
+
+// sass extender for components of each main output field
+
+%output__main-container-extender {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 0.5px solid;
+}
+
+// title - top container
+
+.output__main-container__title {
+  @extend %output__main-container-extender;
+  font-family: $primary-font;
+  background-color: $primary-color;
+  border-radius: 7px 7px 0 0;
+  height: 2.5em;
+  width: 100%;
+}
+
+// id - bottom container
+
+.output__main-container__id {
+  @extend %output__main-container-extender;
+  background-color: $tertiary-color;
+  font-size: 11px;
+  border-radius: 0 0 7px 7px;
+}
+
+// value & percentage - middle container
+
+.output__main-container__middle {
+  width: 90%;
+  margin:  0.5em 0;
+  display: grid;
+  // create grid for value and percentage
+  grid-template-columns: 1fr 3em;
+}
+
+.output__main-container__middle-value {
+  font-size: $medium-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0.5em;
+}
+
+.output__main-container__middle-value__span {
+  color: $secondary-color;
+  font-size: $medium-font;
+}
+
+.output__main-container__middle-percentage {
+  display: flex;
+  justify-content: center;
+  font-size: $small-font;
+  border-radius: $round-border;
+  background-color: $secondary-color;
+  opacity: 0.7;
+  color: #fff;
+}
+
+/* Back button */
+
+.output__back-button {
+  display: grid;
+  grid-column: 1 / 2;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  height: 3.5em;
+  width: 3em;
+  background-color: $secondary-color;
+  border: 0px;
+  border-radius: $round-border;
+  &:active {
+    background-color: $primary-color;
+    transform: $primary-scale;
+  }
+}
+
+// making back button larger and adding hover functionality for large screens
+
+@media screen and (min-width: 600px) {
+
+  .output__back-button {
+    height: 4.5em;
+    width: 3.5em;
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+}
+
+@media (pointer: fine) {
+
+  .output__back-button {
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.output__back-button-start {
+  display: none;
+}
+
+// creating a css triangle using borders
+// placing triangle into middle of back button
+
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 0.6em solid transparent;
+  border-right: 1em solid #fff;
+  border-bottom: 0.6em solid transparent;
+}

@@ -1,0 +1,109 @@
+@import "global";
+
+/***********************************
+
+Layout structure
+
+***********************************/
+
+/***********************************
+
+Header
+
+***********************************/
+
+.color-cash {
+  color: $primary-color;
+}
+
+.color-money {
+  color: $secondary-color;
+}
+
+// only for non-touch screen devices
+
+// creating a helper container to hover head text
+
+@media (pointer: fine) {
+  .head1-hover-fix {
+    cursor: pointer;
+    &:hover .color-cash {
+        display: inline-block;
+        transform: translateY(-15px);
+        transition: transform 0.7s;
+    }
+  }
+  .head2-hover-fix {
+    cursor: pointer;
+    &:hover .color-money {
+        display: inline-block;
+        transform: translateY(-15px);
+        transition: transform 0.7s;
+    }
+  }
+}
+
+.currency {
+  text-align: right;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: $primary-font;
+}
+
+.currency__icon {
+  font-weight: 600;
+  color: $secondary-color;
+  font-family: $primary-font;
+}
+
+@media screen and (min-width: 600px) {
+
+  .currency__icon {
+      margin-left: 0.5em;
+  }
+}
+
+/***********************************
+
+Canvas
+
+***********************************/
+
+canvas {
+  position: absolute;
+  top: 3em;
+  z-index: -1;
+}
+
+/***********************************
+
+Main
+
+***********************************/
+
+main {
+  padding: 2em;
+  font-family: $secondary-font;
+}
+
+// reduce screen padding for very narrow screens
+
+@media screen and (max-width: 350px) {
+
+  main {
+    padding: 1em;
+  }
+}
+
+/***********************************
+
+Footer
+***********************************/
+
+footer {
+  height: 3em;
+  padding: 1em;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}

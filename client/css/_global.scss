@@ -1,0 +1,31 @@
+/***********************************
+
+Global variables
+
+***********************************/
+
+// Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Varela+Round&display=swap");
+
+$primary-font: "Varela Round", sans-serif;
+$secondary-font: "Source Code Pro", monospace;
+
+$small-font: 12px;
+$medium-font: 14px;
+
+// Borders
+
+$button-border-reset: 2px solid;
+$round-border: 7px;
+
+// Color-schemes
+
+$primary-color: #2bb5c4;
+$secondary-color: #3c9982;
+$tertiary-color: #a5a8b5;
+
+// Scale for hover effects
+
+$primary-scale: scale(1.1);
+$secondary-scale: scale(1.05);
