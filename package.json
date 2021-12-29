@@ -7,12 +7,14 @@
     "test": "console.log(\"Hello world!\")",
     "build-prod": "webpack --mode production",
     "build-dev": "webpack serve --mode development --open",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Tino",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "gh-pages": "^3.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
